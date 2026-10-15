@@ -5,7 +5,7 @@ const mk = (slug: string, order: number) => parsePage(`---\nsubject: physics\nle
 describe("content", () => {
   it("builds hrefs and neighbours", () => {
     const a = mk("a", 1), b = mk("b", 2);
-    expect(a.href).toBe("/subjects/physics/3/mechanics/osc/a");
+    expect(a.href).toBe("/subjects/physics/3/mechanics/osc/a/");
     expect(neighbours([a, b], a).next?.slug).toBe("b");
     expect(neighbours([a, b], a).prev).toBeNull();
   });

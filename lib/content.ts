@@ -10,7 +10,7 @@ export function parsePage(src: string): Page {
   const { data: f, content } = matter(src);
   const level = Number(f.level);
   return { subject: f.subject, level, as: f.as, standardSlug: f.standardSlug, standardTitle: f.standardTitle, groupSlug: f.groupSlug, group: f.group, slug: f.slug, title: f.title, description: f.description, order: Number(f.order ?? 0), body: content,
-    href: `/subjects/${f.subject}/${level}/${f.standardSlug}/${f.groupSlug}/${f.slug}` };
+    href: `/subjects/${f.subject}/${level}/${f.standardSlug}/${f.groupSlug}/${f.slug}/` };
 }
 export function getPages(root = ROOT): Page[] {
   if (!fs.existsSync(root)) return [];
